@@ -1,0 +1,89 @@
+<!Doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="estiloFormulario.css">
+<style type="text/css">
+body,td,th {
+	color: #333333;
+}
+</style>
+<title>Agendar cita</title>
+</head>
+<body>
+<header class="header">
+  <h3>IMSS Bienestar-Centro de Santa Cruz Tepexpan</h3>
+</header>
+<nav class="nav">
+<ul class="barnav">
+<li class="menu"><a href="index.html">Inicio</a></li>
+<li class="menu"><a href="historia.html">Historia Clinica</a></li>
+<li class="menu"><a href="organigrama.html">Estructura Clinica</a></li>
+<li class="menu"><a href="AtencionMedica.html">Atención Medica que brinda</a></li>
+<li class="menu"><a href="Sabiasque.html">¿Sabias qué?</a></li>
+</ul>
+</nav>
+<p><img src="ejemplo.png" width="1125" height="705" alt="ejemploo"><br>
+  <br />
+  
+  <h1>Agendar cita</h1>
+  <form id="formulario">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+    <label for="telefono">Número de teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" required><br><br>
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required><br><br>
+    <label for="fecha">Fecha de la cita:</label>
+    <input type="date" id="fecha" name="fecha" required><br><br>
+    <label for="hora">Hora de la cita:</label>
+    <input type="time" id="hora" name="hora" required><br><br>
+    <label for="comentario">Comentario adicional:</label>
+    <textarea id="comentario" name="comentario"></textarea><br><br>
+    <button type="submit" id="generar-cita">Generar cita</button>
+  </form>
+
+  <script>
+    const formulario = document.getElementById('formulario');
+
+    formulario.addEventListener('submit', (e) => {
+      const nombre = document.getElementById('nombre').value;
+      const telefono = document.getElementById('telefono').value;
+      const correo = document.getElementById('correo').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      if (nombre === '' || telefono === '' || correo === '' || fecha === '' || hora === '') {
+        e.preventDefault();
+        alert('Todos los campos excepto el comentario adicional son obligatorios.');
+      } else {
+        e.preventDefault();
+        alert('Cita agendada con éxito');
+      }
+    });
+  </script>
+
+  
+<footer>
+  <div class="fotos">
+    <img src="instagram.jpg" alt="Imagen 1">
+    <img src="facebook.jpg" alt="Imagen 2">
+    <img src="twitter.jpg" alt="Imagen 3">
+  <p style="text-align: center;">&copy; Siguenos en nuestras redes sociales.</p>
+  <p style="text-align: center;">Todos los derechos reservados. Equipo 4</p>
+  
+    Fabiola Canales Guadarrama
+    Cecilia Marlene De Jesus Lara
+    Raul Alexis De Jesus Loperena 
+    Brenda Valentina Gonzalez Olea
+    Alexander Ramos Doñu
+    Jorge Daniel Vieyra Robles
+    Mauricio Rene Vilchis Medina
+  
+  <br>
+ <br>
+  </div>
+</footer>
+</body>
+
+</html>
